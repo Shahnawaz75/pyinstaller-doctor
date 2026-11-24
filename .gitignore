@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+.venv*/
+venv/
+env/
+
+# PyInstaller outputs (also inside examples/)
+build/
+dist/
+*.spec
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+
+# Tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.idea/
+.vscode/

@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyinstaller-doctor"
+version = "0.1.0"
+description = "Find out why your PyInstaller exe fails (missing data files, hidden imports, DLLs, metadata) and get the exact --collect-data / --hidden-import fix."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Shahnawaz75" }]
+keywords = [
+    "pyinstaller", "pyinstaller-hooks", "exe", "freeze", "packaging", "windows-exe",
+    "hidden-imports", "data-files", "collect-data", "add-data", "filenotfounderror",
+    "modulenotfounderror", "auto-py-to-exe", "diagnostics", "build-tools",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: System :: Software Distribution",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pyinstaller = ["pyinstaller>=5.0"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+pyinstaller-doctor = "pyinstaller_doctor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Shahnawaz75/pyinstaller-doctor"
+Documentation = "https://github.com/Shahnawaz75/pyinstaller-doctor/tree/main/docs"
+"Common errors" = "https://github.com/Shahnawaz75/pyinstaller-doctor/blob/main/docs/common-errors.md"
+Issues = "https://github.com/Shahnawaz75/pyinstaller-doctor/issues"
+Changelog = "https://github.com/Shahnawaz75/pyinstaller-doctor/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pyinstaller_doctor = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
